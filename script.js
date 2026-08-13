@@ -1,5 +1,7 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector("#navLinks");
+const courseDropdown = document.querySelector(".nav-dropdown");
+const courseDropbutton = document.querySelector(".nav-dropbutton");
 
 if (menuToggle && navLinks) {
   menuToggle.addEventListener("click", () => {
@@ -13,6 +15,21 @@ if (menuToggle && navLinks) {
       menuToggle.setAttribute("aria-expanded", "false");
     }
   });
+}
+
+if (courseDropdown && courseDropbutton) {
+  const setDropdownOpen = (open) => {
+    courseDropdown.classList.toggle("open", open);
+    courseDropbutton.setAttribute("aria-expanded", String(open));
+  };
+
+  courseDropbutton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    setDropdownOpen(!courseDropdown.classList.contains("open"));
+  });
+
+  document.addEventListener("click", () => setDropdownOpen(false));
+  courseDropdown.addEventListener("click", (event) => event.stopPropagation());
 }
 
 const cleanText = (value) => value.replace(/[<>]/g, "").trim();

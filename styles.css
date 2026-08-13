@@ -113,6 +113,66 @@ a {
   gap: 8px;
 }
 
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropbutton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #2d3934;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.nav-dropbutton:hover,
+.nav-dropbutton:focus-visible,
+.nav-dropdown.open .nav-dropbutton {
+  background: #e8eee6;
+  outline: none;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 20;
+  display: none;
+  min-width: 240px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #2d3934;
+  font-weight: 650;
+}
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a:focus-visible {
+  background: #edf2e8;
+  outline: none;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu {
+  display: block;
+}
+
 .nav-links a {
   padding: 10px 12px;
   border-radius: 6px;
@@ -325,6 +385,10 @@ h3 {
 .course-card a {
   color: var(--teal);
   font-weight: 800;
+}
+
+.featured-card {
+  background: #edf2e9;
 }
 
 .detail-section {
@@ -549,6 +613,23 @@ address {
     box-shadow: var(--shadow);
   }
 
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .nav-dropbutton {
+    width: 100%;
+    justify-content: space-between;
+    padding: 12px 14px;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    min-width: 0;
+    margin-top: 8px;
+    box-shadow: none;
+  }
+
   .nav-links a {
     padding: 12px 14px;
   }
@@ -591,10 +672,20 @@ address {
     padding-bottom: 56px;
   }
 
-  .detail-section,
-  .forms-band,
+  .detail-section {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-inline: 16px;
+  }
+
+  .forms-band {
+    padding-inline: 16px;
+  }
+
   .split.alt {
-    padding-inline: 0;
+    width: min(100%, calc(100% - 24px));
+    margin: 0 auto;
   }
 
   .course-grid,
@@ -606,6 +697,12 @@ address {
   .course-card div,
   .secure-form {
     padding: 18px;
+  }
+
+  .featured-card {
+    width: calc(100% + 24px);
+    margin-inline: -12px;
+    border-radius: 0;
   }
 
   .section-heading {

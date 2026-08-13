@@ -12,7 +12,7 @@ class SecureStaticHandler(SimpleHTTPRequestHandler):
         self.send_header(
             "Content-Security-Policy",
             "default-src 'self'; "
-            "img-src 'self' data: https://images.unsplash.com; "
+            "img-src 'self' data: https://images.unsplash.com https://www.isacademy.net https://www.mekomit.co.il; "
             "style-src 'self'; "
             "script-src 'self'; "
             "object-src 'none'; "
