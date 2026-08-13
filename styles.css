@@ -9,6 +9,8 @@
   --gold: #d6a94d;
   --line: #dfe5dc;
   --shadow: 0 18px 55px rgba(23, 33, 29, 0.13);
+  --viewport-h: 100dvh;
+  --header-h: 76px;
 }
 
 * {
@@ -206,7 +208,7 @@ a {
 
 .hero {
   position: relative;
-  min-height: calc(100svh - 76px);
+  min-height: calc(var(--viewport-h) - var(--header-h));
   display: grid;
   align-items: end;
   overflow: hidden;
@@ -235,27 +237,27 @@ a {
   position: relative;
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  min-height: calc(100svh - 76px);
+  min-height: calc(var(--viewport-h) - var(--header-h));
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 18px;
-  padding: clamp(24px, 4vh, 48px) 0;
+  gap: clamp(12px, 1.8vh, 22px);
+  padding: clamp(18px, 3.2vh, 58px) 0;
   color: white;
 }
 
 .hero h1 {
-  max-width: 11ch;
+  max-width: 15ch;
   margin: 0;
-  font-size: 4.25rem;
-  line-height: 0.95;
+  font-size: clamp(2.7rem, calc(1.65rem + 3vh), 5rem);
+  line-height: 0.93;
   letter-spacing: 0;
 }
 
 .hero p {
-  max-width: 34rem;
+  max-width: 36rem;
   margin: 0;
-  font-size: 1.02rem;
+  font-size: clamp(0.94rem, calc(0.8rem + 0.45vh), 1.1rem);
 }
 
 .eyebrow {
@@ -275,7 +277,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 8px;
+  margin-top: clamp(2px, 0.8vh, 10px);
 }
 
 .button {
@@ -584,30 +586,61 @@ address {
   }
 
   .hero h1 {
-    font-size: 3.2rem;
-    max-width: 13ch;
+    font-size: 3.45rem;
+    max-width: 14ch;
   }
 }
 
 @media (max-height: 840px) {
   .hero-content {
-    padding: 20px 0;
-    gap: 14px;
+    padding: 10px 0;
+    gap: 9px;
   }
 
   .hero h1 {
-    font-size: 3.45rem;
-    max-width: 12ch;
+    font-size: 3.55rem;
+    max-width: 14ch;
   }
 
   .hero p {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-height: 760px) {
+  .hero-content {
+    padding: 8px 0;
+    gap: 7px;
+  }
+
+  .hero .eyebrow {
+    margin-bottom: 6px;
+    font-size: 0.72rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    max-width: 14ch;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .hero-actions {
+    margin-top: 0;
+  }
+
+  .button {
+    min-height: 40px;
+    padding: 9px 14px;
   }
 }
 
 @media (max-width: 760px) {
   .site-header {
     position: sticky;
+    --header-h: 68px;
   }
 
   .menu-toggle {
@@ -662,26 +695,26 @@ address {
   }
 
   .hero {
-    min-height: auto;
+    min-height: calc(var(--viewport-h) - var(--header-h));
     align-items: stretch;
   }
 
   .hero-content {
     width: min(100%, calc(100% - 24px));
-    min-height: auto;
-    justify-content: flex-start;
-    padding: 60px 0 44px;
-    gap: 14px;
+    min-height: calc(var(--viewport-h) - var(--header-h));
+    justify-content: center;
+    padding: 24px 0 20px;
+    gap: 8px;
   }
 
   .hero h1 {
-    font-size: 2.85rem;
+    font-size: clamp(2.2rem, 9.2vw, 3.15rem);
     max-width: 100%;
     line-height: 1;
   }
 
   .hero p {
-    font-size: 1rem;
+    font-size: 0.98rem;
   }
 
   .hero-actions {

@@ -2,6 +2,16 @@ const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector("#navLinks");
 const courseDropdown = document.querySelector(".nav-dropdown");
 const courseDropbutton = document.querySelector(".nav-dropbutton");
+const topLinks = document.querySelectorAll('a[href="#page-top"]');
+
+const syncViewportHeight = () => {
+  const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+  document.documentElement.style.setProperty("--viewport-h", `${Math.round(height)}px`);
+};
+
+syncViewportHeight();
+window.addEventListener("resize", syncViewportHeight);
+window.visualViewport?.addEventListener("resize", syncViewportHeight);
 
 if (menuToggle && navLinks) {
   menuToggle.addEventListener("click", () => {
@@ -31,6 +41,13 @@ if (courseDropdown && courseDropbutton) {
   document.addEventListener("click", () => setDropdownOpen(false));
   courseDropdown.addEventListener("click", (event) => event.stopPropagation());
 }
+
+topLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  });
+});
 
 const cleanText = (value) => value.replace(/[<>]/g, "").trim();
 
