@@ -241,23 +241,23 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: clamp(12px, 1.8vh, 22px);
-  padding: clamp(18px, 3.2vh, 58px) 0;
+  gap: clamp(14px, 2vh, 24px);
+  padding: clamp(22px, 4vh, 68px) 0;
   color: white;
 }
 
 .hero h1 {
   max-width: 15ch;
   margin: 0;
-  font-size: clamp(2.7rem, calc(1.65rem + 3vh), 5rem);
-  line-height: 0.93;
+  font-size: clamp(3.15rem, calc(2rem + 3.35vh), 5.5rem);
+  line-height: 1;
   letter-spacing: 0;
 }
 
 .hero p {
-  max-width: 36rem;
+  max-width: 38rem;
   margin: 0;
-  font-size: clamp(0.94rem, calc(0.8rem + 0.45vh), 1.1rem);
+  font-size: clamp(0.98rem, calc(0.84rem + 0.48vh), 1.12rem);
 }
 
 .eyebrow {
@@ -277,7 +277,29 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: clamp(2px, 0.8vh, 10px);
+  margin-top: clamp(4px, 1vh, 12px);
+}
+
+@media (min-width: 900px) and (min-height: 700px) {
+  .hero-content {
+    gap: 22px;
+    padding: 54px 0 92px;
+  }
+
+  .hero h1 {
+    font-size: 6rem;
+    max-width: 12ch;
+    line-height: 1.02;
+  }
+
+  .hero p {
+    font-size: 1.14rem;
+    max-width: 41rem;
+  }
+
+  .hero-actions {
+    margin-top: 10px;
+  }
 }
 
 .button {
@@ -586,8 +608,8 @@ address {
   }
 
   .hero h1 {
-    font-size: 3.45rem;
-    max-width: 14ch;
+    font-size: 4.15rem;
+    max-width: 15ch;
   }
 }
 
@@ -598,8 +620,8 @@ address {
   }
 
   .hero h1 {
-    font-size: 3.55rem;
-    max-width: 14ch;
+    font-size: 4.25rem;
+    max-width: 15ch;
   }
 
   .hero p {
