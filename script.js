@@ -77,9 +77,12 @@ document.querySelectorAll(".secure-form").forEach((form) => {
       return;
     }
 
-    form.reset();
     if (status) {
-      status.textContent = "Thank you. Your message is ready for secure backend connection.";
+      status.textContent = "Sending your message...";
     }
+
+    setTimeout(() => {
+      form.submit();
+    }, 50);
   });
 });

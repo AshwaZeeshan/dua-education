@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data: https://images.unsplash.com https://www.isacademy.net https://www.mekomit.co.il; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"
+      content="default-src 'self'; img-src 'self' data: https://images.unsplash.com https://www.eips.ca https://static.wixstatic.com; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action https://formsubmit.co"
     >
     <meta
       name="description"
@@ -42,7 +42,7 @@
           <div class="nav-dropdown">
             <button class="nav-dropbutton" type="button" aria-expanded="false" aria-controls="courseMenu">
               Courses
-              <span aria-hidden="true">▾</span>
+              <span aria-hidden="true">&#9662;</span>
             </button>
             <div class="nav-dropdown-menu" id="courseMenu">
               <a href="#courses">All Courses</a>
@@ -63,7 +63,7 @@
       <section class="hero" id="home">
         <div class="hero-media" aria-hidden="true">
           <img
-            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80"
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80"
             alt=""
           >
         </div>
@@ -138,8 +138,8 @@
 
           <article class="course-card">
             <img
-              src="assets/mindful-beginning.png"
-              alt="Woman in hijab reading in a calm study space"
+              src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80"
+              alt="Peaceful forest path"
             >
             <div>
               <span>MB</span>
@@ -150,10 +150,7 @@
           </article>
 
           <article class="course-card">
-            <img
-              src="assets/parenting.jpg"
-              alt="Mother in hijab reading with her child"
-            >
+            <img src="assets/parenting.jpg" alt="Mother in hijab reading with her child">
             <div>
               <span>Parenting</span>
               <h3>Parenting Program</h3>
@@ -164,8 +161,8 @@
 
           <article class="course-card">
             <img
-              src="https://images.unsplash.com/photo-1514894780887-121968d00567?auto=format&fit=crop&w=900&q=80"
-              alt="Open Qur'an on a desk"
+              src="https://images.unsplash.com/photo-1698342389078-c95bb664a627?auto=format&fit=crop&w=900&q=80"
+              alt="Library shelves with books and no people"
             >
             <div>
               <span>QT</span>
@@ -339,7 +336,11 @@
             demo site. Connect it to a trusted backend before using it for real submissions.
           </p>
         </div>
-        <form class="secure-form" data-form="complaint" novalidate>
+        <form class="secure-form" data-form="complaint" action="https://formsubmit.co/duaedupub@gmail.com" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Dua Education complaint form submission">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
           <label>
             Name
             <input type="text" name="name" autocomplete="name" maxlength="80" required>
@@ -379,7 +380,11 @@
             Phone: <a href="tel:+920000000000">+92 000 0000000</a>
           </address>
         </div>
-        <form class="secure-form" data-form="contact" novalidate>
+        <form class="secure-form" data-form="contact" action="https://formsubmit.co/duaedupub@gmail.com" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Dua Education contact form submission">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
           <label>
             Full name
             <input type="text" name="name" autocomplete="name" maxlength="80" required>
@@ -415,3 +420,4 @@
     </footer>
   </body>
 </html>
+
